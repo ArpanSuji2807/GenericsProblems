@@ -11,11 +11,11 @@ namespace TestMaximum
     public class UnitTest2
     {
         [Test]
-        public void GivenSecondStringElement_WhenTestMax_ShouldReturnMaxElement()
+        public void GivenSecondElement_WhenTestMax_ShouldReturnMaxElement()
         {
-            FindMax max = new FindMax();
-            string actual = max.FindMaxStringElement("Apple","Banana","Peach");
-            Assert.AreEqual(actual, "Banana");
+            FindMax<float> max = new FindMax<float>(20.5f,33.6f,15.6f);
+            float actual = max.FindMaxElement();
+            Assert.AreEqual(actual, 33.5f);
         }
     }
 }

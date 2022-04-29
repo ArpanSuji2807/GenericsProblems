@@ -6,26 +6,30 @@ using System.Threading.Tasks;
 
 namespace FindMaximum
 {
-    public class FindMax
+    public class FindMax<T> where T : IComparable
     {
-        public string FindMaxStringElement(string first,string second,string third)
+        public T first, second, third;
+        public FindMax(T first, T second, T third)
         {
-            int first_Length = first.Length;
-            int second_Length = second.Length;
-            int third_Length = third.Length;
-            if (first_Length.CompareTo(second_Length) > 0 && first_Length.CompareTo(third_Length) > 0)
+            this.first = first;
+            this.second = second;
+            this.third = third;
+        }
+        public  T FindMaxElement()
+        {
+            if (first.CompareTo(second) > 0 && first.CompareTo(third) > 0)
             {
-                Console.WriteLine("First Element is Greater: " +first);
+                Console.WriteLine("First Element is Greater: \n" + first);
                 return first;
             }
-            if (second_Length.CompareTo(first_Length) > 0 && second_Length.CompareTo(third_Length) > 0)
+            if (second.CompareTo(first) > 0 && second.CompareTo(third) > 0)
             {
-                Console.WriteLine("Second Element is Greater: "+second);
+                Console.WriteLine("Second Element is Greater: " + second);
                 return second;
             }
             else
             {
-                Console.Write("Third Element is Greater: "+third);
+                Console.Write("Third Element is Greater: " + third);
                 return third;
             }
         }
