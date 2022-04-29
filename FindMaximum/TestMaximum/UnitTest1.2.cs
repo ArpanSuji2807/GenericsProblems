@@ -14,8 +14,8 @@ namespace TestMaximum
         public void GivenSecondInput_WhenTestMax_ShouldReturnMaxNum()
         {
             FindMax max = new FindMax();
-            int actual = max.FindMaxInteger(1, 3, 2);
-            Assert.AreEqual(actual, 3);
+            float actual = max.FindMaxFloatNumber(16.2f,20.5f,17.3f);
+            Assert.AreEqual(actual, 20.5f);
         }
     }
 }
